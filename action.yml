@@ -1,0 +1,17 @@
+name: 'proto-c compile'
+description: 'compile proto-c prototypes'
+inputs: 
+  files:
+    description: 'file name pattern'
+    required: true
+  output-dir:
+    description: 'output directory for prototypes'
+    required: true
+    default: '.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    files: ${{ inputs.files }}
+    output-dir:  ${{ inputs.output_dir }}
+
