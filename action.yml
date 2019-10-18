@@ -12,6 +12,6 @@ runs:
   using: 'docker'
   image: 'docker://tellsoftware/protobuf-c-compile-action:v0'
   env:
-    FILES: ${{ inputs.files }}
-    OUTPUT_DIR:  ${{ inputs.output_dir }}
+    files=${{ inputs.files }}: ''
+    output_dir=${{ inputs.output_dir }}: ''
 
