@@ -22,7 +22,7 @@ inputs:
     description: 'output dir'
   c_out:
     description: 'output dir'
-rruns:
+runs:
   using: 'docker'
   image: 'docker://tellsoftware/protobuf-c-compile-action:v1'
   env:

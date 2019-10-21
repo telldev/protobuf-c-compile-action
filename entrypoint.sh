@@ -5,6 +5,8 @@ compile () {
         return 0;
     fi 
 
+    mkdir -p $2;
+
     protoc --$1=$2 $3;
     
     if [ $? -ne 0 ]; then
