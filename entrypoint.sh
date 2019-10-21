@@ -1,16 +1,16 @@
 #!/bin/bash
 
 compile () {
-    if [ $# -lt 3 ]; then
+    if [ "${!1}" == "" ]; then
         return 0;
     fi 
 
-    mkdir -p $2;
+    mkdir -p ${!1};
 
-    protoc --$1=$2 $3;
+    protoc --$1=${!1} $2;
     
     if [ $? -ne 0 ]; then
-        echo "Compile error (protoc --$1=$2 $3)";
+        echo "Compile error (protoc --$1=${!1} $2)";
         return -1;
     fi;
 
@@ -21,15 +21,15 @@ echo "Compiling $files";
 
 RESULT=0;
 
-compile "cpp_out" $cpp_out $files;
-compile "csharp_out" $csharp_out $files;
-compile "java_out" $java_out $files;
-compile "js_out" $js_out $files;
-compile "objc_out" $objc_out $files;
-compile "php_out" $php_out $files;
-compile "python_out" $python_out $files;
-compile "ruby_out" $ruby_out $files;
-compile "c_out" $c_out $files;
+compile "cpp_out" "$files";
+compile "csharp_out" "$files";
+compile "java_out" "$files";
+compile "js_out" "$files";
+compile "objc_out" "$files";
+compile "php_out" "$files";
+compile "python_out" "$files";
+compile "ruby_out" "$files";
+compile "c_out" "$files";
 
 echo "done.";
 
