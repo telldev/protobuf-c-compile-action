@@ -4,14 +4,36 @@ inputs:
   files:
     description: 'file name pattern'
     required: true
-  output-dir:
-    description: 'output directory for prototypes'
-    required: true
-    default: '.'
-runs:
+  csharp_out:
+    description: 'output dir'
+  cpp_out:
+    description: 'output dir'
+  java_out:
+    description: 'output dir'
+  js_out:
+    description: 'output dir'
+  objc_out:
+    description: 'output dir'
+  php_out:
+    description: 'output dir'
+  python_out:
+    description: 'output dir'
+  ruby_out:
+    description: 'output dir'
+  c_out:
+    description: 'output dir'
+rruns:
   using: 'docker'
-  image: 'docker://tellsoftware/protobuf-c-compile-action:v0'
+  image: 'docker://tellsoftware/protobuf-c-compile-action:v1'
   env:
     files=${{ inputs.files }}: ''
-    output_dir=${{ inputs.output_dir }}: ''
+    csharp_out=${{ inputs.csharp_out }}: ''
+    cpp_out=${{ inputs.cpp_out }}: ''
+    java_out=${{ inputs.java_out }}: ''
+    js_out=${{ inputs.js_out }}: ''
+    objc_out=${{ inputs.objc_out }}: ''
+    php_out=${{ inputs.php_out }}: ''
+    python_out=${{ inputs.python_out }}: ''
+    ruby_out=${{ inputs.ruby_out }}: ''
+    c_out=${{ inputs.c_out }}: ''
 
